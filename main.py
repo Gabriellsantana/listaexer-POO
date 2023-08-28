@@ -108,3 +108,46 @@ quantidade_rodapes = perimetro_total / tamanho_rodape
 print("Quantidade de pisos necessários:", quantidade_pisos)
 print("Quantidade de rodapés necessários:", quantidade_rodapes)
 
+#4. Classe Pessoa: Crie uma classe que modele uma pessoa:
+class Pessoa:
+    def __init__(self, nome, idade, peso, altura):
+        self.nome = nome
+        self.idade = idade
+        self.peso = peso
+        self.altura = altura
+
+    def envelhecer(self):
+        self.idade += 1
+        if self.idade < 21:
+            self.crescer(0.5)
+
+    def engordar(self, aumento_peso):
+        self.peso += aumento_peso
+
+    def emagrecer(self, reducao_peso):
+        self.peso -= reducao_peso
+
+    def crescer(self, aumento_altura):
+        self.altura += aumento_altura
+
+    def mostrar_informacoes(self):
+        print(f"Nome: {self.nome}, Idade: {self.idade}, Peso: {self.peso}, Altura: {self.altura}")
+
+nome_usuario = input("Digite o nome da pessoa: ")
+idade_usuario = int(input("Digite a idade da pessoa: "))
+peso_usuario = float(input("Digite o peso da pessoa: "))
+altura_usuario = float(input("Digite a altura da pessoa: "))
+
+pessoa1 = Pessoa(nome_usuario, idade_usuario, peso_usuario, altura_usuario)
+
+pessoa1.mostrar_informacoes()
+
+anos_a_envelhecer = int(input("Digite quantos anos deseja envelhecer a pessoa: "))
+pessoa1.envelhecer()
+pessoa1.engordar(2)
+pessoa1.emagrecer(1)
+pessoa1.crescer(0.8)
+
+pessoa1.mostrar_informacoes()
+
+
