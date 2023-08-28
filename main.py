@@ -68,3 +68,43 @@ quadrado1.mudar_lado(novo_lado_usuario)
 
 print("Novo lado do quadrado:", quadrado1.retornar_lado())
 print("Nova área do quadrado:", quadrado1.calcular_area())
+
+#3. Classe Retângulo: Crie uma classe que modele um retângulo:
+class Retangulo:
+    def __init__(self, lado_a, lado_b):
+        self.lado_a = lado_a
+        self.lado_b = lado_b
+
+    def mudar_lados(self, novo_lado_a, novo_lado_b):
+        self.lado_a = novo_lado_a
+        self.lado_b = novo_lado_b
+
+    def retornar_lados(self):
+        return self.lado_a, self.lado_b
+
+    def calcular_area(self):
+        return self.lado_a * self.lado_b
+
+    def calcular_perimetro(self):
+        return 2 * (self.lado_a + self.lado_b)
+
+lado_a_usuario = float(input("Informe o valor do lado A do retângulo: "))
+lado_b_usuario = float(input("Informe o valor do lado B do retângulo: "))
+retangulo1 = Retangulo(lado_a_usuario, lado_b_usuario)
+
+print("Lados do retângulo:", retangulo1.retornar_lados())
+print("Área do retângulo:", retangulo1.calcular_area())
+print("Perímetro do retângulo:", retangulo1.calcular_perimetro())
+
+tamanho_piso = float(input("Informe o tamanho do piso: "))
+tamanho_rodape = float(input("Informe o tamanho do rodapé: "))
+
+area_total = retangulo1.calcular_area()
+perimetro_total = retangulo1.calcular_perimetro()
+
+quantidade_pisos = area_total / tamanho_piso
+quantidade_rodapes = perimetro_total / tamanho_rodape
+
+print("Quantidade de pisos necessários:", quantidade_pisos)
+print("Quantidade de rodapés necessários:", quantidade_rodapes)
+
