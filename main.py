@@ -39,3 +39,32 @@ def main():
 
 
 main()
+
+
+#2. Classe Quadrado: Crie uma classe que modele um quadrado:
+#a. Atributos: Tamanho do lado
+#b. Métodos: Mudar valor do Lado, Retornar valor do Lado e calcular Área;
+class Quadrado:
+    def __init__(self, lado):
+        self.lado = lado
+
+    def mudar_lado(self, novo_lado):
+        self.lado = novo_lado
+
+    def retornar_lado(self):
+        return self.lado
+
+    def calcular_area(self):
+        return self.lado ** 2
+
+lado_usuario = float(input("Informe o tamanho do lado do quadrado: "))
+quadrado1 = Quadrado(lado_usuario)
+
+print("Lado do quadrado:", quadrado1.retornar_lado())
+print("Área do quadrado:", quadrado1.calcular_area())
+
+novo_lado_usuario = float(input("Informe o novo tamanho do lado do quadrado: "))
+quadrado1.mudar_lado(novo_lado_usuario)
+
+print("Novo lado do quadrado:", quadrado1.retornar_lado())
+print("Nova área do quadrado:", quadrado1.calcular_area())
